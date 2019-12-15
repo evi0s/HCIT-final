@@ -1,0 +1,23 @@
+{
+  "name": "HCIT-final",
+  "version": "1.0.0",
+  "description": "hcit",
+  "repository": "https://github.com/evi0s/HCIT-final.git",
+  "scripts": {
+    "build_all": "npx webpack",
+    "build_index": "npx webpack --config-name=index",
+    "build_cart": "npx webpack --config-name=cart",
+    "build_statics": "npx webpack --config-name=statics"
+  },
+  "author": "evi0s",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@types/jquery": "^3.3.31",
+    "anydriver": "https://github.com/evi0s/anyDriver",
+    "jquery": "^3.4.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

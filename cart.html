@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>我的订单</title>
+</head>
+<body>
+<div class="title">
+    <div class="top">
+        <div style="font-size: 24px;"><a href="index.html" style="text-decoration: none;">订餐系统</a></div>
+        <div>
+            <a href="cart.html">我的订单</a>
+            |
+            <a href="statics.html">订单统计</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .car-box {
+        width: 1200px;
+        margin: 0 auto;
+        height: 500px;
+        margin-top: 20px;
+    }
+
+    .car-box table{
+        width: 100%;
+    }
+
+    .car-box table td{
+        text-align: center;
+        height: 50px;
+        height: 80px;
+    }
+
+    .all_money {
+        float: right;
+        margin-right: 35px;
+    }
+
+    .all_money button{
+        border: 0;
+        width: 100px;
+        height: 30px;
+        color: #fff;
+        border-radius: 3px;
+        background-color: #faaa00;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .del {
+        border: 0;
+        width: 50px;
+        height: 25px;
+        color: #fff;
+        border-radius: 3px;
+        background-color: #e92b0a;
+        cursor: pointer;
+    }
+
+    .jia, .jian {
+        border: 0;
+        width: 25px;
+        background-color: #047272;
+        color: #fff;
+        border-radius: 3px;
+        height: 20px;
+        outline: none;
+        cursor: pointer;
+    }
+
+</style>
+
+<div class="car-box">
+    <table>
+
+    </table>
+
+    <div class="all_money">
+        总价：￥<span>55.00</span><button onclick="tijiao()">提交订单</button>
+    </div>
+</div>
+</body>
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script>
+
+    list_item();
+
+    //减
+    $(".car-box").on("click", ".jian", function(){
+        var index = $(this).parents("tr").data("index");
+        var list = JSON.parse(localStorage.getItem("json_card"));
+
+        if(list[index].num > 1){
+            list[index].num -= 1;
+        }
+        localStorage.setItem("json_card",JSON.stringify(list));
+        list_item();
+    })
+
+    //加
+    $(".car-box").on("click", ".jia", function(){
+        var index = $(this).parents("tr").data("index");
+        var list = JSON.parse(localStorage.getItem("json_card"));
+
+        list[index].num += 1;
+        localStorage.setItem("json_card",JSON.stringify(list));
+        list_item();
+    })
+
+    //删除
+    $(".car-box").on("click", ".del", function(){
+        var index = $(this).parents("tr").data("index");
+        var list = JSON.parse(localStorage.getItem("json_card"));
+
+        list.splice(index,1);
+        localStorage.setItem("json_card",JSON.stringify(list));
+        list_item();
+    })
+
+    function list_item(){
+        var html_list = '<tr><th width="150px">菜图</th><th>菜名</th><th width="100px">单价</th><th width="100px">数量</th><th width="100px">金额</th><th width="100px">操作</th></tr>';
+        var list = JSON.parse(localStorage.getItem("json_card"));
+        var money = 0;
+        if(list){
+            for(var i = 0; i < list.length; i++){
+                html_list += '<tr data-index="'+i+'"><td width="60px"><img src="'+list[i].img+'" alt="" width="100px"></td>' +
+                    '<td>'+list[i].name+'</td>' +
+                    '<td>￥'+list[i].money+'</td>' +
+                    '<td style="display: flex; justify-content: space-between; align-items: center;"><button class="jian">-</button><span>'+list[i].num+'</span><button class="jia">+</button></td>' +
+                    '<td class="money">￥'+ (list[i].num * list[i].money).toFixed(2) +'</td>' +
+                    '<td><input type="button" value="删除" class="del" class="del"></td></tr>';
+
+                money += list[i].num * list[i].money
+            }
+        }
+
+        $(".car-box table").html(html_list);
+        $(".all_money span").text(money.toFixed(2));
+    }
+
+    function tijiao(){
+        localStorage.setItem("json_card", "[]");
+        location.href="index.html";
+    }
+</script>
+
+</html>

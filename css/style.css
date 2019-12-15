@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+}
+
+.title {
+    width: 100%;
+    line-height: 50px;
+    height: 50px;
+    background-color: #313131;
+    color: #fff;
+}
+
+.title .top {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item {
+    width: 1000px;
+}
+
+.box {
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    margin-top: 20px;
+    display: block;
+    border-bottom: 1px solid #313131;
+}
+
+.item {
+    float: left;
+    margin: 10px 15px;
+    text-align: center;
+}
+
+.item img {
+    width: 220px;
+    height: 145px;
+}
+
+.item button {
+    border: 0;
+    background-color: #047272;
+    height: 25px;
+    width: 60px;
+    color: #ffffff;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.box-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    min-height: 708px;
+    border: 1px solid #313131;
+}
+
+.box .cart {
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #313131;
+}
+
+.box .item-dish {
+    width: 180px;
+    margin: 5px auto;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.box .item-dish .name {
+    text-align: center;
+}
+
+.box .item-dish img {
+    width: 100%;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .item-dish .add, .box .item-dish .sub{
+    border: 0;
+    width: 25px;
+    background-color: #047272;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.box .item-dish button{
+    outline: none;
+    cursor: pointer;
+}
+
+.box .item-dish .del{
+    width: 40px;
+    background-color: red;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    margin: 0 auto;
+    font-size: 14px;
+    margin-top: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.order button {
+    border: 0;
+    background-color: #047272;
+    color: #fff;
+    height: 26px;
+    margin-top: 2px;
+    width: 40px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
