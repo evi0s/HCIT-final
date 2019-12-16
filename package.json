@@ -12,8 +12,10 @@
   "author": "evi0s",
   "license": "GPL-3.0",
   "dependencies": {
+    "@types/chart.js": "^2.9.5",
     "@types/jquery": "^3.3.31",
     "anydriver": "https://github.com/evi0s/anyDriver",
+    "chart.js": "^2.9.3",
     "jquery": "^3.4.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.3",
