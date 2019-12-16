@@ -20,3 +20,4 @@ yarn && npm run build_all
 
 * JQuery
 * [anyDriver](https://github.com/evi0s/anyDriver)
+* Chart.Js

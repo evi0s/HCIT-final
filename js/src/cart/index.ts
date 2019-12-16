@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
-import { anyDriver as AnyDriver } from 'anyDriver';
-import { Arrays, Objects } from 'anyDriver/src/dataTypes';
+import { anyDriver as AnyDriver } from 'anydriver';
+import { Arrays, Objects } from 'anydriver/src/dataTypes';
 
 import  { Item } from "../index";
 
