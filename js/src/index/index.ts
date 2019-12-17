@@ -7,7 +7,9 @@ import { Arrays, Objects } from 'anydriver/src/dataTypes';
 let prevData = localStorage.getItem('cart');
 let storage: Objects = {};
 try {
-    storage = JSON.parse(prevData);
+    if(prevData) {
+        storage = JSON.parse(prevData);
+    }
 } catch (err) {
     console.log('Invalid data!');
 }
@@ -15,10 +17,13 @@ try {
 let driver = new AnyDriver(storage);
 
 // Set a cart
-let cart: Arrays = [];
-driver.set('cart', cart);
+if(!driver.get('cart')) {
+    let cart: Arrays = [];
+    driver.set('cart', cart);
+}
 
-// Clear cart
+
+// Init cart
 listItem();
 
 // Item interface

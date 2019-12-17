@@ -1,7 +1,7 @@
-import * as ChartJs from 'chart.js';
+import { Chart } from 'chart.js';
 import * as $ from 'jquery';
 
-new ChartJs.Chart(<HTMLCanvasElement> $('#chartContainer').get(0), {
+new Chart(<HTMLCanvasElement> $('#chartContainer').get(0), {
     type: 'bar',
     data: {
         labels: ["北京烤鸭", "东坡肉", "菜心"],

@@ -54,13 +54,8 @@ module.exports = [{
     module: {
         rules: [{
             test: /\.tsx?$/,
-            loader: 'ts-loader',
-            include: __dirname,
-            options: {
-                allowTsInNodeModules: true
-            }
-        },
-        ],
+            loader: 'ts-loader'
+        }],
     },
     resolve: {
         extensions: [ '.tsx', '.ts', '.js' ],
