@@ -51,6 +51,7 @@ h3 {
 .item img {
     width: 220px;
     height: 145px;
+    border-radius: 5px;
 }
 
 .item button {
@@ -95,6 +96,7 @@ h3 {
 
 .box .item-dish img {
     width: 100%;
+    border-radius: 5px;
 }
 
 .flex-sb {

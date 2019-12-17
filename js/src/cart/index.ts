@@ -86,7 +86,7 @@ function listItem() {
 
         htmlList +=
             '<tr data-index="' + i + '">' +
-                '<td width="60px"><img src="' + tmpItem.img + '" alt="" width="100px"></td>' +
+                '<td width="60px"><img src="' + tmpItem.img + '" alt="" width="100px;" style="border-radius: 5px;"></td>' +
                 '<td>' + tmpItem.name + '</td>' +
                 '<td>￥' + tmpItem.price + '</td>' +
                 '<td style="display: flex; justify-content: space-between; align-items: center;">' +
